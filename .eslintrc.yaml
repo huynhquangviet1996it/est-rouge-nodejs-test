@@ -10,6 +10,3 @@ parserOptions:
   project: ./tsconfig.json
 plugins:
   - '@typescript-eslint'
-rules: 
-  generator-star-spacing: 'off'
-  prettier/prettier: 'error'
