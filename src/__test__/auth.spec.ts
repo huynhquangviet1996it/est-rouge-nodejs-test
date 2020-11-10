@@ -2,8 +2,8 @@ import supertest from 'supertest';
 import chai from 'chai';
 import jwt from 'jsonwebtoken';
 
-import app from '../src/app';
-import { JWT_KEY, USER_INFO } from '../src/configs/auth-config';
+import app from '../app';
+import { JWT_KEY, USER_INFO } from '../configs/auth-config';
 const request = supertest(app);
 const expect = chai.expect;
 
