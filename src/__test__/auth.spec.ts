@@ -22,9 +22,10 @@ describe('Auth API Routes', () => {
           expect(body.status).equal('SUCCESS');
           expect(body.message).equal('login successful');
           const dataFromToken = jwt.verify(res.body.data.token, JWT_KEY);
-          expect(dataFromToken.username)
-            .equal(body.data.username)
-            .equal(USER_INFO.username);
+          if (dataFromToken)
+            expect(dataFromToken.username)
+              .equal(body.data.username)
+              .equal(USER_INFO.username);
           expect(dataFromToken.email)
             .equal(body.data.email)
             .equal(USER_INFO.email);
