@@ -4,5 +4,7 @@ node_js:
 
 install:
   - npm install
+before_script:
+  - docker-compose up -d
 script:
   - npm run coverage

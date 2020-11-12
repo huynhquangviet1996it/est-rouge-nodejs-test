@@ -2,8 +2,8 @@ import supertest from 'supertest';
 import chai from 'chai';
 import jwt from 'jsonwebtoken';
 
-import app from '../src/app';
-import { JWT_KEY, USER_INFO } from '../src/configs/auth-config';
+import app from '../app';
+import { JWT_KEY, USER_INFO } from '../configs/auth-config';
 const request = supertest(app);
 const expect = chai.expect;
 
@@ -22,9 +22,10 @@ describe('Auth API Routes', () => {
           expect(body.status).equal('SUCCESS');
           expect(body.message).equal('login successful');
           const dataFromToken = jwt.verify(res.body.data.token, JWT_KEY);
-          expect(dataFromToken.username)
-            .equal(body.data.username)
-            .equal(USER_INFO.username);
+          if (dataFromToken)
+            expect(dataFromToken.username)
+              .equal(body.data.username)
+              .equal(USER_INFO.username);
           expect(dataFromToken.email)
             .equal(body.data.email)
             .equal(USER_INFO.email);
