@@ -33,9 +33,9 @@ export default class EventService {
                 limit: parseInt(otherFilter.limit),
               }
             : {}),
-          ...(otherFilter.offset
+          ...(otherFilter.skip
             ? {
-                offset: parseInt(otherFilter.offset),
+                skip: parseInt(otherFilter.skip),
               }
             : {}),
         },

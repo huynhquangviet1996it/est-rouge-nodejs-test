@@ -244,7 +244,7 @@ describe('Event API Routes', () => {
           .query({
             filter: {
               limit: 2,
-              offset: 0,
+              skip: 0,
             },
           })
           .expect(200)
