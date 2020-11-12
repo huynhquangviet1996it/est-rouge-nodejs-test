@@ -1,2 +1,3 @@
 dist
 *.json
+init-mongo.js
